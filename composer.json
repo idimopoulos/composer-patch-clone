@@ -1,0 +1,43 @@
+{
+    "name": "idimopoulos/composer-patch-clone",
+    "description": "Composer plugin for cloning and managing patches locally.",
+    "type": "composer-plugin",
+    "require": {
+        "ext-json": "*",
+        "cweagans/composer-patches": "^1.7",
+        "composer-plugin-api": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ComposerPatchClone\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ComposerPatchClone\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "composer/composer": "^2.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "cweagans/composer-patches": true
+        }
+    },
+    "extra": {
+        "composer-patch-clone": {
+            "output-directory": "resources/patch"
+        },
+        "output-directory": "resources/patch",
+        "patches": {
+            "test/package": {
+                "Add custom feature": "resources/patch/test/package/test-patch.diff"
+            }
+        }
+    },
+    "scripts": {
+        "patch-get": "ComposerPatchClone\\Commands::clonePatch"
+    }
+}

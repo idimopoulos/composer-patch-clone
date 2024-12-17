@@ -1,0 +1,15 @@
+# Exclude common IDE files.
+.idea/
+.vscode/
+
+# Exclude the vendor directory.
+vendor/
+
+# Exclude the tests/tmp directory which is used for test files.
+tests/tmp/
+
+# Exclude the composer.lock file.
+composer.lock
+
+# Exclude commonly ignored files.
+/.phpunit.result.cache
